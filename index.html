@@ -1,66 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>React Website in HTML</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        .wrapper {
+            display: flex
+        }
+
+        #circle {
+            height: 100px;
+            width: 100px;
+            border: 20px solid green;
+            border-radius: 100px;
+            position: relative;
+        }
+
+        #circle:after {
+            content: "";
+            position: absolute;
+            border-top: 100px solid transparent;
+            top: -35px;
+        }
+
+        .circle1:after {
+            border-left: 140px solid white;
+            left: -50px;
+            top: -35px;
+        }
+
+        .circle2:after {
+            border-right: 140px solid white;
+            right: -50px;
+        }
+
+        .circle1:before {
+            content: "";
+            height: 20px;
+            width: 276px;
+            position: absolute;
+            background: green;
+            left: -18px;
+            top: 45px;
+            z-index: 1;
+        }
+    </style>
 </head>
+
 <body>
-    <div id="root"></div>
-
-    <!-- React and ReactDOM from CDN -->
-    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    
-    <!-- Your custom JavaScript -->
-    <script type="text/javascript">
-        // Main Website Component
-        function App() {
-            return (
-                <div className="container">
-                    <Header />
-                    <MainContent />
-                    <Footer />
-                </div>
-            );
-        }
-
-        // Header Component
-        function Header() {
-            return (
-                <header>
-                    <h1>My React Website</h1>
-                    <nav>
-                        <a href="#">Home</a>
-                        <a href="#">About</a>
-                        <a href="#">Contact</a>
-                    </nav>
-                </header>
-            );
-        }
-
-        // Main Content Component
-        function MainContent() {
-            return (
-                <main>
-                    <h2>Welcome to My Website</h2>
-                    <p>This is a simple example of a website built with React components in HTML and CSS.</p>
-                </main>
-            );
-        }
-
-        // Footer Component
-        function Footer() {
-            return (
-                <footer>
-                    <p>&copy; 2024 My React Website. All rights reserved.</p>
-                </footer>
-            );
-        }
-
-        // Render the App component
-        ReactDOM.render(<App />, document.getElementById('root'));
-    </script>
+    <div class="wrapper">
+        <div id="circle" class="circle1"></div>
+        <div id="circle" class="circle2"></div>
+    </div>
 </body>
+
 </html>
